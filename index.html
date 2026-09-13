@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="백일해 백신과 발명가 지문을 위한 인터랙티브 영어 정리 노트" />
+    <title>영어 정리 노트 | 백일해 백신과 발명가들</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="첫 화면으로">ENGLISH NOTE<span>01</span></a>
+      <button class="progress-button" type="button" id="progressButton" aria-label="학습 진도 보기">
+        <span id="progressText">학습 0 / 20</span><span class="progress-ring" aria-hidden="true"><i id="progressRing"></i></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">READ · PARSE · REMEMBER</p>
+        <h1 id="page-title">백일해 백신과<br /><em>더 큰 선을 위한 발명가들</em></h1>
+        <p class="hero-copy">긴 문장을 끊어 읽고, 수식어를 걷어 내고,<br />핵심 문법을 내 것으로 만드는 영어 읽기 노트.</p>
+        <div class="hero-meta"><span>1932—1989</span><span>20개의 핵심 문장</span><span>문법 집중</span></div>
+      </section>
+
+      <section class="guide" aria-label="학습 방법">
+        <div><b>01</b><p><strong>문장을 먼저 읽어요.</strong><br />/ 표시는 의미 단위입니다.</p></div>
+        <div><b>02</b><p><strong>번역은 필요할 때 열어요.</strong><br />스스로 해석한 뒤 확인해 보세요.</p></div>
+        <div><b>03</b><p><strong>문법 포인트를 표시해요.</strong><br />완료한 카드는 저장됩니다.</p></div>
+      </section>
+
+      <nav class="chapter-nav" aria-label="지문 목차" id="chapterNav"></nav>
+      <section class="lesson" id="lesson" aria-live="polite"></section>
+
+      <section class="grammar-summary" aria-labelledby="grammar-title">
+        <div class="section-label">QUICK REFERENCE</div>
+        <h2 id="grammar-title">핵심 문법, 한 장으로</h2>
+        <div class="grammar-grid" id="grammarGrid"></div>
+      </section>
+
+      <section class="review" aria-labelledby="review-title">
+        <div>
+          <p class="eyebrow">REVIEW YOURSELF</p>
+          <h2 id="review-title">오늘의 복습 질문</h2>
+          <p>정답을 외우기보다 문장의 구조를 다시 찾아보세요.</p>
+        </div>
+        <ol id="reviewList"></ol>
+      </section>
+    </main>
+
+    <footer>Made for slow, thoughtful reading. <span>·</span> English Note 01</footer>
+    <template id="cardTemplate">
+      <article class="study-card">
+        <div class="card-top"><span class="sentence-number"></span><button class="complete-button" type="button">완료 표시</button></div>
+        <h3 class="sentence-title"></h3>
+        <blockquote class="english"></blockquote>
+        <button class="translation-toggle" type="button" aria-expanded="false">해석 확인하기 <span>↓</span></button>
+        <div class="translation" hidden></div>
+        <div class="grammar-point"></div>
+      </article>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>
